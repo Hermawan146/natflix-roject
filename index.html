@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang di Natflix</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Natflix</h1>
+
+        <!-- Formulir Login -->
+        <div id="loginFormContainer">
+            <p class="welcome-message">Login</p>
+            <form id="loginForm">
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="password">Kata Sandi</label><br>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <input type="checkbox" id="showPasswordLogin" onclick="togglePasswordVisibility('password')"> Tampilkan Kata Sandi
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for="rememberMe">Ingatkan Saya</label>
+                </div>
+                <button type="submit">Masuk</button>
+            </form>
+            <p class="create-account">Belum memiliki akun? <a href="#" id="showSignUp">Buat Akun</a></p>
+        </div>
+
+        <!-- Formulir Daftar -->
+        <div id="signupFormContainer" style="display: none;">
+            <h2>Buat Akun</h2>
+            <form id="signupForm">
+                <label for="newEmail">Email</label><br>
+                <input type="email" id="newEmail" name="newEmail" required><br>
+                <label for="newPassword">Kata Sandi</label><br>
+                <div class="password-container">
+                    <input type="password" id="newPassword" name="newPassword" required>
+                    <input type="checkbox" id="showPasswordSignup" onclick="togglePasswordVisibility('newPassword')"> Tampilkan Kata Sandi
+                </div>
+                <label for="confirmPassword">Konfirmasi Kata Sandi</label><br>
+                <div class="password-container">
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <input type="checkbox" id="showConfirmPassword" onclick="togglePasswordVisibility('confirmPassword')"> Tampilkan Kata Sandi
+                </div>
+                <button type="submit">Daftar</button>
+            </form>
+            <p class="login-account">Sudah memiliki akun? <a href="#" id="showLogin">Masuk di sini</a></p>
+        </div>
+
+        <!-- Halaman Beranda -->
+        <div id="homePageContainer" style="display: none;">
+            <div class="navbar">
+                <h1>Natflix</h1>
+                <ul>
+                    <li><a href="#" id="homeLink"><i class="fa-solid fa-house"></i> Beranda</a></li>
+                    <li><a href="#" id="profileLink"><i class="fa-solid fa-user"></i> Profil</a></li>
+                    <li><a href="#" id="searchLink"><i class="fa-solid fa-magnifying-glass"></i> Cari</a></li>
+                </ul>
+            </div>
+
+            <!-- Bagian Konten -->
+            <div id="homeContent" class="content-section">
+                <h3>Beranda</h3>
+                <p>Ini adalah bagian beranda di mana Anda dapat menemukan acara dan film yang ditampilkan.</p>
+            </div>
+
+            <div id="profileContent" class="content-section" style="display: none;">
+                <h3>Profil</h3>
+                <p>Ini adalah bagian profil Anda. Kelola pengaturan akun Anda di sini.</p>
+            </div>
+
+            <div id="searchContent" class="content-section" style="display: none;">
+                <h3>Cari</h3>
+                <input type="text" placeholder="Cari acara atau film...">
+                <button>Cari</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src='script.js'></script>
+</body>
+</html>
