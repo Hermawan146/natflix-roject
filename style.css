@@ -1,3 +1,5 @@
+/* style.css */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #141414;
@@ -35,6 +37,9 @@ input[type=email], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
+    background-color: white; /* Warna latar belakang putih */
+    color: black; /* Warna teks hitam */
+    border: 1px solid #ccc; /* Garis tepi abu-abu */
 }
 
 button {
@@ -46,7 +51,7 @@ button {
 
 /* Navbar Styles */
 .navbar {
-    background-color: #333;
+    background-color: #333; /* Warna latar belakang navbar */
     padding: 10px;
 }
 
@@ -65,8 +70,8 @@ button {
 }
 
 .navbar a {
-    color: #e50914; /* Natflix red */
-    text-decoration: none;
+    color: red; /* Ubah warna teks menjadi putih */
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
 }
 
 /* Content Section Styles */
