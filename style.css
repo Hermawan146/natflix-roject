@@ -1,9 +1,7 @@
-/* style.css */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #141414;
-    color: white;
+    color: rgba(255, 255, 255, 0.993);
     height: 100vh;
     margin: 0;
 }
@@ -47,7 +45,7 @@ button {
 
 /* Navbar Styles */
 .navbar {
-    background-color: #f8f3f3;
+    background-color: #333;
     padding: 10px;
 }
 
