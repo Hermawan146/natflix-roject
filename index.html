@@ -40,53 +40,82 @@
     <div id="signupFormContainer" style="display: none;">
         <h2>Buat Akun</h2>
         <form id="signupForm">
+            <label for="fullNameInput">Nama Lengkap:</label><br>
+            <input type="text" id="fullNameInput" name="fullNameInput" required style='background-color:white;color:black;border:1px solid #ccc;padding:12px 20px;margin:8px 0;'><br>
+
             <label for="newEmail">Email:</label><br>
-            <input type="email" id="newEmail" name="newEmail" required style="background-color: white; color: black; border: 1px solid #ccc; padding: 12px 20px; margin: 8px 0;"><br>
+            <input type="email" id="newEmail" name="newEmail" required style='background-color:white;color:black;border:1px solid #ccc;padding:12px 20px;margin:8px 0;'><br>
 
             <label for="newPassword">Kata Sandi:</label><br>
             <div class="password-container">
-                <input type="password" id="newPassword" name="newPassword" required style="background-color: white; color: black; border: 1px solid #ccc; padding: 12px 20px; margin: 8px 0;">
-                <input type="checkbox" id="showPasswordSignup" onclick="togglePasswordVisibility('newPassword')"> Tampilkan Kata Sandi
+                <input type="password" id="newPassword" name="newPassword" required style='background-color:white;color:black;border:1px solid #ccc;padding:12px 20px;margin:8px 0;'>
+                <input type='checkbox' id='showPasswordSignup' onclick='togglePasswordVisibility("newPassword")'> Tampilkan Kata Sandi
             </div>
 
-            <label for="confirmPassword">Konfirmasi Kata Sandi:</label><br>
-            <div class="password-container">
-                <input type="password" id="confirmPassword" name="confirmPassword" required style="background-color: white; color: black; border: 1px solid #ccc; padding: 12px 20px; margin: 8px 0;">
-                <input type="checkbox" id="showConfirmPassword" onclick="togglePasswordVisibility('confirmPassword')"> Tampilkan Kata Sandi
+            <label for='confirmPassword'>Konfirmasi Kata Sandi:</label><br>
+            <div class='password-container'>
+                <input type='password' id='confirmPassword' name='confirmPassword' required style='background-color:white;color:black;border:1px solid #ccc;padding:12px 20px;margin:8px 0;'>
+                <input type='checkbox' id='showConfirmPassword' onclick='togglePasswordVisibility("confirmPassword")'> Tampilkan Kata Sandi
             </div>
 
-            <button type="submit" style="background-color: #e50914; color: white; padding: 14px 20px;">Daftar</button>
+            <!-- Tanggal Lahir -->
+            <label for='birthDateInput'>Tanggal Lahir:</label><br>
+            <input type='date' id='birthDateInput' required style='background-color:white;color:black;border:1px solid #ccc;padding:12px 20px;margin:8px 0;'><br>
+
+            
+
+            <!-- Tombol Daftar -->
+            <button type='submit' style='background-color:#e50914;color:white;padding :14 px;'>Daftar</button>
         </form>
 
-        <p class="login-account">Sudah memiliki akun? <a href="#" id="showLogin">Masuk di sini</a></p>
+        <p class='login-account'>Sudah memiliki akun? <a href='#' id='showLogin'>Masuk di sini</a></p>
     </div>
 
     <!-- Halaman Beranda -->
-    <div id="homePageContainer" style="display: none;">
-        <div class="navbar">
+    <div id='homePageContainer' style='display:none;'>
+        <div class='navbar'>
             <h1>Natflix</h1>
             <ul>
-                <li><a href="#" id="homeLink"><i class="fa-solid fa-house"></i> Beranda</a></li>
-                <li><a href="#" id="profileLink"><i class="fa-solid fa-user"></i> Profil</a></li>
-                <li><a href="#" id="searchLink"><i class="fa-solid fa-magnifying-glass"></i> Cari</a></li>
+                <li><a href='#' id='homeLink'><i class='fa-solid fa-house'></i> Beranda</a></li>
+                <li><a href='#' id='profileLink'><i class='fa-solid fa-user'></i> Profil</a></li>
+                <li><a href='#' id='searchLink'><i class='fa-solid fa-magnifying-glass'></i> Cari</a></li>
             </ul>
         </div>
 
         <!-- Bagian Konten -->
-        <div id="homeContent" class="content-section">
+        <div id='homeContent' class='content-section'>
             <h3>Beranda</h3>
             <p>Ini adalah bagian beranda di mana Anda dapat menemukan acara dan film yang ditampilkan.</p>
+            
         </div>
 
-        <div id="profileContent" class="content-section" style="display: none;">
+        <!-- Bagian Profil -->
+        <div id='profileContent' class='content-section' style='display:none;'>
             <h3>Profil</h3>
-            <p>Ini adalah bagian profil Anda. Kelola pengaturan akun Anda di sini.</p>
+
+            <!-- Tampilan Akun yang Sudah Di Masukkan -->
+            <div class='account-info'>
+                <h4>Informasi Akun</h4>
+                <ul>
+                    <li><strong>Nama Lengkap:</strong> <span id='fullName'></span></li>
+                    <li><strong>Email:</strong> <span id='emailAddress'></span></li>
+                    <li><strong>Tanggal Lahir:</strong> <span id='birthDate'></span></li>
+                   
+                </ul>
+            </div>
+
+            <!-- Form Pengaturan Akun -->
+            <!-- Form ini bisa digunakan untuk mengedit informasi jika diperlukan -->
+            <!-- Namun untuk saat ini, kita hanya menampilkan informasi dari localStorage -->
         </div>
 
-        <div id="searchContent" class="content-section" style="display: none;">
+        <!-- Bagian Konten Cari -->
+        <div id='searchContent' class='content-section' style='display:none;'>
             <h3>Cari</h3>
-            <input type="text" placeholder="Cari acara atau film..." style="background-color: white; color: black; border: 1px solid #ccc; padding: 12px 20px;"><br>
-            <button style="background-color: #e50914; color: white; padding: 14px 20px;">Cari</button>
+            <!-- Input pencarian -->
+            <input type='text' placeholder='Cari acara atau film...' style='background-color:white;color:black;border :1 px solid #ccc;padding :12 px;margin :8 px;'><br>
+            <!-- Tombol Cari -->
+            <button style='background-color:#e50914;color:white;padding :14 px;'>Cari</button>
         </div>
 
     </div>
